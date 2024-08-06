@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_api/core/api/dio_consumer.dart';
+import 'package:project_api/home/screens/home.dart';
 import 'package:project_api/profile/screens/profileScreen_req.dart';
 import 'package:project_api/profile/screens/profilescreen_res.dart';
 import 'package:project_api/repositories/user_repository.dart';
@@ -85,8 +86,8 @@ class _MyStatefulWidgetState extends State<SignIn> {
                            Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  ProfileScreen_res(),
+                              builder: (context) => Home(),
+                                //  ProfileScreen_res(),
                             ),
                           );
                         },

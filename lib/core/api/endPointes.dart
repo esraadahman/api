@@ -7,7 +7,8 @@ class EndPoint {
     return "ENDPOINT/$id";
   }
 
-  static String logout = "logout";
+  static String logout = "logout?";
+  static String getallPosts = "posts";
 }
 
 class ApiKey {
@@ -32,4 +33,9 @@ class ApiKey {
   static String confirmPassword = "confirmPassword";
   static String location = "location";
   static String profilePic = "profilePic";
+
+  //get all posts
+  static String title = "title";
+  static String description = "description";
+  static String user_id = "user_id";
 }

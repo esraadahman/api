@@ -84,4 +84,27 @@ class DioConsumer extends ApiConsumer {
       handelDioExceptions(e);
     }
   }
+
+  //  Future get(String path,
+  //     {Object? data, Map<String, dynamic>? queryParameters}) async {
+  //   try {
+  //     final token = CacheHelper().getData(key: ApiKey.token);
+  //     if (token == null) {
+  //       throw Exception("Token is null");
+  //     }
+  //     final response = await dio.get(
+  //       path,
+  //       data: data,
+  //       queryParameters: queryParameters,
+  //       options: Options(
+  //         headers: {
+  //           'Authorization': 'Bearer $token',
+  //         },
+  //       ),
+  //     );
+  //     return response.data;
+  //   } on DioException catch (e) {
+  //     handelDioException(e);
+  //   }
+  // }
 }

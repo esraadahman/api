@@ -7,10 +7,18 @@ class ApiInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     //options.headers['accept_ language'] = "en";
-    options.headers[ApiKey.token] =
-        CacheHelper().getData(key: ApiKey.token) != null
-            ? "blablabla${CacheHelper().getData(key: ApiKey.token)}"
-            : null;
+    // options.headers['Authorization'] =
+    //     CacheHelper().getData(key: ApiKey.token) != null
+    //         ? "${CacheHelper().getData(key: ApiKey.token)}"
+    //         : null;
+
+     final token = CacheHelper().getData(key: ApiKey.token);
+    if (token != null) {
+      options.headers['Authorization'] = "Bearer $token";
+    }
     super.onRequest(options, handler);
   }
+  
+
+  // 'Authorization': 'Bearer $token',
 }

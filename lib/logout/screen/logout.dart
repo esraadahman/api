@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_api/core/api/dio_consumer.dart';
 import 'package:project_api/logout/cubit/cubit/logout_cubit.dart';
+import 'package:project_api/sign_in/Screens/signin.dart';
 
 class Logout extends StatelessWidget {
   const Logout({super.key});
@@ -12,9 +13,7 @@ class Logout extends StatelessWidget {
     return BlocProvider(
       create: (context) => LogoutCubit(DioConsumer(dio: Dio())),
       child: BlocConsumer<LogoutCubit, LogoutState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+        listener: (context, state) {},
         builder: (context, state) {
           final cubit = BlocProvider.of<LogoutCubit>(context);
           return Scaffold(
@@ -22,10 +21,11 @@ class Logout extends StatelessWidget {
               child: Container(
                 child: GestureDetector(
                   onTap: () {
+                    cubit.logout();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Logout(),
+                        builder: (context) => SignIn(),
                       ),
                     );
                   },
